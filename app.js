@@ -10,7 +10,6 @@ app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true, limit: "5mb" }));
 app.use(cors());
 
-
 // Rota de cadastro ✅
 app.post("/usuarios", async (req, res) => {
   try {
