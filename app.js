@@ -268,7 +268,7 @@ app.get("/locais/usuario/:id_usuario", async (req, res) => {
 //ROTA PUT - EDIÇÃO DOS LOCAIS ✅
 app.put("/locais/:id_local", async (req, res) => {
   const { id_local } = req.params;
-  const { id_usuario, nome_local, descricao, categoria, endereco, cidade, imagem, contato, checkBoxesDias, horario_funcionamento} = req.body;
+  const { id_usuario, nome_local, categoria, endereco, cidade, horario_funcionamento, descricao, contato, imagem, checkBoxesDias } = req.body;
 
   try {
     // Busca função do usuário e o dono do local
@@ -290,14 +290,14 @@ app.put("/locais/:id_local", async (req, res) => {
       UPDATE local 
       SET 
         nome_local = ${nome_local}, 
-        descricao = ${descricao}, 
-        categoria = ${categoria}, 
+        categoria = ${categoria},
         endereco = ${endereco},
         cidade = ${cidade},
-        imagem = ${imagem},
+        horario_funcionamento = ${horario_funcionamento},
+        descricao = ${descricao}, 
         contato = ${contato},
-        dias = ${checkBoxesDias},
-        horario_funcionamento = ${horario_funcionamento}
+        imagem = ${imagem},
+        dias = ${checkBoxesDias}
       WHERE id_local = ${id_local}
     `;
 
